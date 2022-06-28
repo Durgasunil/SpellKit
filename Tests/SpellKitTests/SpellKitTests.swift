@@ -6,6 +6,6 @@ final class SpellKitTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(SpellKit().text, "Hello, World!")
+        XCTAssertEqual(Class(name: "True Polymorph").name, "True Polymorph")
     }
 }
