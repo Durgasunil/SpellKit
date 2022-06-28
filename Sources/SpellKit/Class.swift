@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-class Class: Object, Identifiable {
-    @Persisted var id: String = UUID().uuidString
-    @Persisted var name: String = ""
+public class Class: Object, Identifiable {
+    @Persisted public var id: String = UUID().uuidString
+    @Persisted public var name: String = ""
     
     convenience init(name: String) {
         self.init()
