@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
-struct SpellsHttpClient: HTTPClient {
-    func getSpellsForClass(withIndex index: String) async -> [String]{
+public struct SpellsHttpClient: HTTPClient {
+    public func getSpellsForClass(withIndex index: String) async -> [String]{
         var result: Result<JSON, RequestError>
         result = await Request(endpoint: ClassEndpoint.getSpellsForClass(index: index))
                 
@@ -31,7 +31,7 @@ struct SpellsHttpClient: HTTPClient {
         }
     }
     
-    func getSpell(withIndex index: String) async -> Spell? {
+    public func getSpell(withIndex index: String) async -> Spell? {
         var result: Result<JSON, RequestError>
         result = await Request(endpoint: ClassEndpoint.getSpell(index: index))
         

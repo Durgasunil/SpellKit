@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-struct ClassHttpClient: HTTPClient {
+public struct ClassHttpClient: HTTPClient {
     func getClasses() async -> List<Class> {
         var result: Result<JSON, RequestError>
         result = await Request(endpoint: ClassEndpoint.getClasses)
