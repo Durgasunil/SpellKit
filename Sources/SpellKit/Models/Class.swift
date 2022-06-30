@@ -13,6 +13,8 @@ public class Class: Object, Identifiable {
     @Persisted(primaryKey: true) public var id: String = UUID().uuidString
     @Persisted public var index: String = ""
     @Persisted public var name: String = ""
+    
+    @Persisted public var spells = List<Spell>()
         
     convenience required public init(json: JSON) {
         self.init()
