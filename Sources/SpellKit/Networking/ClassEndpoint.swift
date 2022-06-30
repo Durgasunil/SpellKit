@@ -9,8 +9,8 @@ import Foundation
 
 enum ClassEndpoint {
     case getClasses
-    case getSpellsForClass(let index)
-    case getSpell(let index)
+    case getSpellsForClass(index: String)
+    case getSpell(index: String)
 }
 
 extension ClassEndpoint: Endpoint {
@@ -19,6 +19,10 @@ extension ClassEndpoint: Endpoint {
         switch self {
         case .getClasses:
             return "classes"
+        case .getSpellsForClass(let index):
+            return "classes/\(index)/spells"
+        case .getSpell(let index):
+            return "spells/\(index)"        
         }
     }
     

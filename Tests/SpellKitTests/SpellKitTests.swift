@@ -8,8 +8,19 @@ final class SpellKitTests: XCTestCase {
         // results.
         let classList = await ClassHttpClient().getClasses()
         
-        XCTAssertGreaterThan(classList.count, 0)
-        print(classList)
-        
+        XCTAssertEqual(classList.count, 12)
+    }
+    
+    func testRetrieveSpellsForClass() async throws {
+        let spellList = await SpellsHttpClient().getSpellsForClass(withIndex: "bard")
+        XCTAssertEqual(spellList.count, 111)
+    }
+    
+    func testRetrieveSpell() async throws {
+        guard let spell = await SpellsHttpClient().getSpell(withIndex: "mass-suggestion") else {
+            XCTFail("return nil from api")
+            return
+        }
+        XCTAssertEqual(spell.index, "mass-suggestion")
     }
 }

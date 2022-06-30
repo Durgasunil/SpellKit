@@ -14,7 +14,7 @@ public final class RealmManager {
     private let inMemoryRealmName = "Spells"
     public static let shared = RealmManager()
         
-    private var appRealmConfig {
+    private var appRealmConfig: Realm.Configuration {
         return Realm.Configuration(inMemoryIdentifier: inMemoryRealmName)
     }
         
