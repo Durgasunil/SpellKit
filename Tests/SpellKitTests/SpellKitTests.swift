@@ -1,4 +1,5 @@
 import XCTest
+import SwiftyJSON
 @testable import SpellKit
 
 final class SpellKitTests: XCTestCase {
@@ -22,5 +23,20 @@ final class SpellKitTests: XCTestCase {
             return
         }
         XCTAssertEqual(spell.index, "mass-suggestion")
+    }
+    
+    func testInitializeSpellFromJSON() {
+        if let path = Bundle.main.path(forResource: "spell", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let spellJSON = JSON(data)
+                let spell = Spell(json: spellJSON)
+                XCTAssertEqual(spell.name, "Sacred Flame")
+              } catch {
+                   // handle error
+              }
+        }
+        
+        
     }
 }
