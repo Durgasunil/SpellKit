@@ -10,6 +10,8 @@ import RealmSwift
 import SwiftyJSON
 
 public struct SpellsHttpClient: HTTPClient {
+    public init() { }
+    
     public func getSpellsForClass(withIndex index: String) async -> [String]{
         var result: Result<JSON, RequestError>
         result = await Request(endpoint: ClassEndpoint.getSpellsForClass(index: index))
