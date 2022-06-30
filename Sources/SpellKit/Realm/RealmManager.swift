@@ -18,8 +18,8 @@ public final class RealmManager {
         return Realm.Configuration(inMemoryIdentifier: inMemoryRealmName)
     }
         
-    public var garmentRealm: Realm {
-        var realmConfig: Realm.Configuration = appRealmConfig
+    public var spellRealm: Realm {
+        let realmConfig = appRealmConfig
         
         let realm = try! Realm(configuration: realmConfig)
         return realm
