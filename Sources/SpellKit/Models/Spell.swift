@@ -10,10 +10,9 @@ import RealmSwift
 import SwiftyJSON
 
 public class Spell:Object, Identifiable {
-    @Persisted(primaryKey: true) public var id: String = UUID().uuidString
-    @Persisted public var index: String
-    @Persisted public var name: String
-    @Persisted public var desc: String
+    @Persisted(primaryKey: true) public var index: String
+    @Persisted public var name: String = ""
+    @Persisted public var desc: String = ""
     
     convenience required public init(json: JSON) {
         self.init()

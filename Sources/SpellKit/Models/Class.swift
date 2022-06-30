@@ -14,7 +14,7 @@ public class Class: Object, Identifiable {
     @Persisted public var index: String = ""
     @Persisted public var name: String = ""
     
-    @Persisted public var spells = List<Spell>()
+    @Persisted public var spells = List<String>()
         
     convenience required public init(json: JSON) {
         self.init()
