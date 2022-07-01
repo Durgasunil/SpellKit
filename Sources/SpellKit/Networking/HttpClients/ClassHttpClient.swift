@@ -28,7 +28,7 @@ public struct ClassHttpClient: HTTPClient {
             }
             return classes
             
-        case .failure(let error):
+        case .failure(let _):
             return classes
         }
     }

@@ -41,7 +41,7 @@ public struct SpellsHttpClient: HTTPClient {
         case .success(let json):            
             return Spell(json: json)
         
-        case .failure(let error):
+        case .failure(let _):
             return nil
         }
     }

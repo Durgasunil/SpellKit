@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
+/// realm model for spell as defined here https://www.dnd5eapi.co/docs#get-/api/spells
 public class Spell:Object, Identifiable {
     @Persisted(primaryKey: true) public var index: String
     @Persisted public var name: String = ""

@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
+/// Realm Model for Character Class as defined here https://www.dnd5eapi.co/docs#tag--Class
 public class Class: Object, Identifiable {
     @Persisted(primaryKey: true) public var id: String = UUID().uuidString
     @Persisted public var index: String = ""

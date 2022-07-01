@@ -8,7 +8,8 @@
 import Foundation
 import RealmSwift
 
-// Singleton class to access the Realm as per the configuration.
+/// Singleton class to access the Realm as per the configuration.
+/// Provides an inmemoryrealm as of now to cache the data retrieved from backend.
 public final class RealmManager {
     
     private let inMemoryRealmName = "Spells"
@@ -17,7 +18,7 @@ public final class RealmManager {
     private var appRealmConfig: Realm.Configuration {
         return Realm.Configuration(inMemoryIdentifier: inMemoryRealmName)
     }
-        
+          
     public var spellRealm: Realm {
         let realmConfig = appRealmConfig
         

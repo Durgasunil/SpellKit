@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// represents all the inputs needed to initialize an Endpoint to make http requests
 protocol Endpoint {
     var baseURL: String { get }
     var path: String { get }

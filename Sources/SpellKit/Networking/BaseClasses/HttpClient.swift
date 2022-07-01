@@ -12,7 +12,7 @@ protocol HTTPClient {
     func Request(endpoint: Endpoint) async -> Result<JSON, RequestError>
 }
 
-
+// implements request method to request a response from an http endpoint
 extension HTTPClient {
     func Request(endpoint: Endpoint) async -> Result<JSON, RequestError> {
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {

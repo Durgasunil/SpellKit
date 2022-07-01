@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// endpoint to retrieve classes and spell associated with a class
+///  TBD : Seperat out the spell classes.
 enum ClassEndpoint {
     case getClasses
     case getSpellsForClass(index: String)

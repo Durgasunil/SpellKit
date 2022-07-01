@@ -36,7 +36,5 @@ final class SpellKitTests: XCTestCase {
                    // handle error
               }
         }
-        
-        
     }
 }
